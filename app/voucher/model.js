@@ -5,7 +5,7 @@ let voucherSchema = mongoose.Schema({
         type: String,
         require: [true, 'Nama game harus diisi']
     },
-    name: {
+    status: {
         type: String,
         enum: ['Y', 'N'],
         default: 'Y'
@@ -19,7 +19,7 @@ let voucherSchema = mongoose.Schema({
     },
     nominals: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Nominal'
+        ref: 'nominal'
     }],
     user: {
         type: mongoose.Schema.Types.ObjectId,
