@@ -1,4 +1,5 @@
-const Nominal = require('./model')
+const Payment = require('./model')
+const Bank = require('../bank/model')
 
 module.exports = {
     index: async(req, res) => {
@@ -7,89 +8,92 @@ module.exports = {
             const alertStatus = req.flash("alertStatus")
 
             const alert = { message: alertMessage, status: alertStatus }
-            const nominal = await Nominal.find()
+            const payment = await Payment.find().populate('banks')
 
-            res.render('admin/nominal/view_nominal', {
-                nominal,
+            res.render('admin/payment/view_payment', {
+                payment,
                 alert
             })
         } catch (err) {
             req.flash('alertMessage', `${err.message}`)
             req.flash('alertStatus', 'danger')
-            res.redirect('/nominal')
+            res.redirect('/payment')
         }
     },
     viewCreate: async(req, res) => {
         try {
-            res.render('admin/nominal/create')
+            const banks=await Bank.find()
+            res.render('admin/payment/create',{banks})
         } catch (err) {
             req.flash('alertMessage', `${err.message}`)
             req.flash('alertStatus', 'danger')
-            res.redirect('/nominal')
+            res.redirect('/payment')
         }
     },
     actionCreate: async(req, res) => {
         try {
-            const { coinName, coinQuantity, price } = req.body
-            let nominal = await Nominal({ coinName, coinQuantity, price })
-            await nominal.save();
+            const { banks, type } = req.body
+            let payment = await Payment({ banks, type })
+            await payment.save();
 
-            req.flash('alertMessage', "Berhasil tambah nominal")
+            req.flash('alertMessage', "Berhasil tambah payment")
             req.flash('alertStatus', "success")
 
-            res.redirect('/nominal')
+            res.redirect('/payment')
 
         } catch (err) {
             req.flash('alertMessage', `${err.message}`)
             req.flash('alertStatus', 'danger')
-            res.redirect('/nominal')
+            res.redirect('/payment')
         }
     },
     viewEdit: async(req, res) => {
         try {
             const { id } = req.params
-            const nominal = await Nominal.findOne({ _id: id })
-            res.render('admin/nominal/edit', {
-                nominal
+            const banks=await Bank.find()
+            const payment = await Payment.findOne({ _id: id })
+            res.render('admin/payment/edit', {
+                payment,
+                banks
             })
         } catch (err) {
             req.flash('alertMessage', `${err.message}`)
             req.flash('alertStatus', 'danger')
-            res.redirect('/nominal')
+            res.redirect('/payment')
         }
     },
 
     actionEdit: async(req, res) => {
         try {
             const { id } = req.params
-            const { coinName, coinQuantity, price } = req.body
-            await Nominal.findOneAndUpdate({ _id: id }, { coinName, coinQuantity, price });
+            const { type, banks } = req.body
+            await Payment.findOneAndUpdate({ _id: id }, { type, banks });
 
             req.flash('alertMessage', "Berhasil ubah nominal")
             req.flash('alertStatus', "success")
 
-            res.redirect('/nominal')
+            res.redirect('/payment')
         } catch (err) {
             req.flash('alertMessage', `${err.message}`)
             req.flash('alertStatus', 'danger')
-            res.redirect('/nominal')
+            res.redirect('/payment')
         }
     },
     actionDelete: async(req, res) => {
         try {
             const { id } = req.params;
-            await Nominal.findOneAndRemove({
+            await Payment.findOneAndRemove({
                 _id: id
             });
 
-            req.flash('alertMessage', "Berhasil hapus nominal")
+            req.flash('alertMessage', "Berhasil hapus payment")
             req.flash('alertStatus', "success")
 
-            res.redirect('/nominal')
+            res.redirect('/payment')
         } catch (err) {
             req.flash('alertMessage', `${err.message}`)
             req.flash('alertStatus', 'danger')
-            res.redirect('/nominal')
+            res.redirect('/payment')
         }
     }
 }
