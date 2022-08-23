@@ -68,7 +68,7 @@ module.exports={
              if(!res_bank) return res.status(404).json({message: 'payment tidak ditemukan.'})
 
              let tax=res_nominal._doc.price/10;
-             let value=res_nominal._doc.price-tax;
+             let value=res_nominal._doc.price+tax;
 
              const payload={
                 historyVoucherTopup:{
