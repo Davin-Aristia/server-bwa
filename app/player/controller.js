@@ -246,7 +246,7 @@ module.exports={
                         res.status(201).json({
                             data:{
                                 id:player.id,
-                                name:player.name,
+                                username:player.username,
                                 phoneNumber:player.phoneNumber,
                                 avatar:player.avatar
                             }
@@ -264,7 +264,7 @@ module.exports={
                 res.status(201).json({
                     data:{
                         id:player.id,
-                        name:player.name,
+                        username:player.username,
                         phoneNumber:player.phoneNumber,
                         avatar:player.avatar
                     }
