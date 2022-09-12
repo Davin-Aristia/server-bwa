@@ -37,7 +37,7 @@ let transactionSchema = mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['Pending','success','failed'],
+        enum: ['Pending','Success','Failed'],
         default: 'Pending'
     },
     player:{

@@ -4,7 +4,7 @@
   },
   "tax": 125000,
   "value": 1375000,
-  "status": "pending",
+  "status": "Pending",
   "historyVoucherTopup": {
     "gameName": "Mobile Legends",
     "category": "Desktop",
@@ -50,7 +50,7 @@
   },
   "tax": 125000,
   "value": 1375000,
-  "status": "pending",
+  "status": "Pending",
   "historyVoucherTopup": {
     "gameName": "Valorant",
     "category": "Desktop",
@@ -96,7 +96,7 @@
   },
   "tax": 125000,
   "value": 1375000,
-  "status": "pending",
+  "status": "Pending",
   "historyVoucherTopup": {
     "gameName": "Super Mechs",
     "category": "Mobile",
