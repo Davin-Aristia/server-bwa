@@ -26,8 +26,8 @@ module.exports = {
 
     actionSignin:async(req,res)=>{
         try{
-            const {email,password}=req.body
-            const check = await User.findOne({email:email})
+            const {username,password}=req.body
+            const check = await User.findOne({username:username})
 
             if(check){
                 if(check.status==='Y'){
@@ -35,7 +35,7 @@ module.exports = {
                     if(checkPassword){
                         req.session.user={
                             id: check._id,
-                            email: check.email,
+                            username: check.username,
                             status: check.status,
                             name: check.name
                         }
@@ -51,7 +51,7 @@ module.exports = {
                     res.redirect('/')
                 }
             }else{
-                req.flash('alertMessage', `Email yang anda inputkan salah`)
+                req.flash('alertMessage', `Username yang anda inputkan salah`)
                 req.flash('alertStatus', 'danger')
                 res.redirect('/')
             }
