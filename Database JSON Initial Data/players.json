@@ -1,0 +1,50 @@
+[{
+  "_id": {
+    "$oid": "60bcee695603e6693630c5de"
+  },
+  "role": "user",
+  "status": "Y",
+  "email": "player@gmail.com",
+  "password": "$2a$10$ht3pRXzkRimCf.qTdS6IuON7SE3/M.MAU4rBG1y8Nap3H/UsIUDWq",
+  "phoneNumber": "1238901238291",
+  "username": "player",
+  "name": "ini name",
+  "avatar": "ab6fd55ecf35e9fe2de4ae26069a28e6.png",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1622994537946"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661313113442"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62fe056118e1e1d723c69135"
+  },
+  "email": "davin@gmail.com",
+  "name": "Davin Aristia",
+  "username": "Frenzy",
+  "password": "$2a$10$ZYxmTE1Fn3cmyXH7Oze1HenHuk4ajqJ5OFyGJFpe.5MGZBONtct7K",
+  "role": "user",
+  "status": "Y",
+  "avatar": "b076ea5aec4453ab97188865a2f60818.jpg",
+  "phoneNumber": "08123456789",
+  "favorite": {
+    "$oid": "603152e0a4dd027eefacce61"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1660814689969"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663039351164"
+    }
+  },
+  "__v": 0
+}]

@@ -29,7 +29,7 @@
   "category": {
     "$oid": "603152e0a4dd027eefacce62"
   },
-  "name": "elfin sanjaya",
+  "name": "Davin Aristia",
   "accountUser": "821739",
   "voucherTopup": {
     "$oid": "603152e0a4dd027eefadde62"
@@ -38,10 +38,14 @@
     "$oid": "60bcee695603e6693630c5de"
   },
   "createdAt": {
-    "$date": "2021-06-08T03:01:59.173Z"
+    "$date": {
+      "$numberLong": "1623121319173"
+    }
   },
   "updatedAt": {
-    "$date": "2021-06-08T03:01:59.173Z"
+    "$date": {
+      "$numberLong": "1623121319173"
+    }
   },
   "__v": 0
 },{
@@ -75,7 +79,7 @@
   "category": {
     "$oid": "603152e0a4dd027eefacce62"
   },
-  "name": "elfin sanjaya",
+  "name": "Davin Aristia",
   "accountUser": "821739",
   "voucherTopup": {
     "$oid": "603152e0a4dd027eefadde64"
@@ -84,10 +88,14 @@
     "$oid": "60bcee695603e6693630c5de"
   },
   "createdAt": {
-    "$date": "2021-06-08T22:52:37.579Z"
+    "$date": {
+      "$numberLong": "1623192757579"
+    }
   },
   "updatedAt": {
-    "$date": "2021-06-08T22:52:37.579Z"
+    "$date": {
+      "$numberLong": "1623192757579"
+    }
   },
   "__v": 0
 },{
@@ -121,7 +129,7 @@
   "category": {
     "$oid": "603152e0a4dd027eefacce60"
   },
-  "name": "elfin sanjaya",
+  "name": "Davin Aristia",
   "accountUser": "821739",
   "voucherTopup": {
     "$oid": "603152e0a4dd027eefadde60"
@@ -130,10 +138,14 @@
     "$oid": "60bcee695603e6693630c5de"
   },
   "createdAt": {
-    "$date": "2021-06-08T23:30:51.452Z"
+    "$date": {
+      "$numberLong": "1623195051452"
+    }
   },
   "updatedAt": {
-    "$date": "2021-06-08T23:30:51.452Z"
+    "$date": {
+      "$numberLong": "1623195051452"
+    }
   },
   "__v": 0
 }]
